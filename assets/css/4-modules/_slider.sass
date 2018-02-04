@@ -1,0 +1,24 @@
+.home
+  .slider
+    .slick-dots
+      li.slick-active
+        button:before
+          color: white
+      li button:before
+        color: white
+.slick-dots
+  bottom: 15px
+  z-index: 999
+
+.slider-wrapper
+  height: 200px
+  overflow: hidden
+  @extend %background-image
+  background-position: center 80%
+
+// because dots are inside the image, 
+// set the margin-bottom to 0
+// margin is in slick-theme.scss (no variable)
+.slick-dotted.slick-slider
+  margin-bottom: 0px
+

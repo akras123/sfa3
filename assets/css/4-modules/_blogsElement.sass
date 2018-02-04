@@ -1,0 +1,220 @@
+.sidemenu
+  .blogsElement
+    .blogList
+      > ul
+        @extend .subnav
+        > li
+          .postTitle
+            font:
+              size: 14px
+              weight: 600
+            margin-top: 0px
+            margin-bottom: 0px
+
+.blogsElement
+  // margin-bottom: 60px
+  .blogList
+    > ul
+      > li
+        &:last-child
+          border-bottom: none
+        .postBody
+          > ol, > ul
+            padding-left: 0px
+            > li
+              list-style: inherit
+          > ol
+            @media screen and (max-width: $screen-xs-max)
+              padding-left: 20px
+          > ul
+            @media screen and (max-width: $screen-xs-max)
+              padding-left: 0px
+
+        .postTitle
+          font:
+            size: 16px
+            weight: 600
+          // text-transform: uppercase
+        .postFeaturedImage
+          // margin-bottom: 30px
+
+.element.bestuursleden
+  .blogsElement
+    ul > li >
+      .postFeaturedImage
+        width: 115px
+        height: 115px
+        overflow: hidden
+        border-radius: 50%
+        margin: 0 auto
+        img
+          max-width: 100%
+    .blogList
+      >ul
+        list-style: none
+        padding-left: 0
+        float: none
+        margin-top: 30px
+        >li
+          list-style: none
+          display: block
+          float: left
+          clear: none
+          padding: 0
+          margin-bottom: 30px
+          text-align: center
+          width: 33.33333%
+          @media screen and (max-width: $screen-xs-max)
+            width: 100%
+          @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+            width: 50%
+          @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max)
+          @media screen and (min-width: $screen-lg-min)
+          .postTitle
+            margin-top: 10px
+            margin-bottom: 10px
+            a
+              // color: $accent
+              &:after
+                +transition(transform, 300ms ease-in-out)
+                transform: rotate(45deg)
+                position: relative
+                top: 5px
+                display: block
+                color: $accent
+                font:
+                  family: 'Glyphicons Halflings'
+                  style: normal
+                  weight: 400
+                line-height: 1
+                content: "\e108"
+              &:hover
+                color: $brand
+                &:after
+                  transform: rotate(90deg)
+                  color: $accent
+          .postBody
+            text-align: left
+            padding: 0 15px
+            > h3
+              margin-top: 0px
+              text-align: center
+              font:
+                size: 14px
+                weight: 400
+            p
+              margin-bottom: 0px
+            p:first-of-type
+              // font-weight: 600
+              display: none
+        .modal-header
+          .close
+            font-style: normal
+          .modal-title
+            text-align: center
+        .modal-body
+          padding: 60px 60px 30px
+          @media screen and (max-width: $screen-xs-max)
+            padding: 15px
+
+          p:first-of-type
+            font-weight: 600
+          // img
+          //   @extend .img-thumbnail
+
+          // img
+          //   @extend .postFeaturedImage
+          //   width: 115px
+          //   height: 115px
+          //   border-radius: 50%
+          //   @media screen and (max-width: $screen-xs-max)
+          //     display: block
+          //     margin: 0 auto
+body.nieuws
+  .content
+    .pageTitle, > p
+      text-align: center
+      @media screen and (max-width: $screen-xs-max)
+        text-align: left
+
+.element.nieuws
+  .blogsElement
+    .blogList
+      ul
+        margin: 15px auto 45px
+        display: block
+        max-width: 600px
+        padding: 0
+        position: relative
+        list-style-type: none
+        &:before
+          position: absolute
+          left: 50%
+          top: 0
+          content: ' '
+          width: 1px
+          height: 100%
+          border-left: 1px solid $brand
+          x-index: -1
+          @media screen and (max-width: $screen-xs-max)
+            left: 20px
+        >li
+          width: 50%
+          height: 100%
+          position: relative
+          display: block
+          padding: 15px 0
+          .postTitle
+            margin-top: -5px
+            margin-bottom: 5px
+          &:before
+            position: absolute
+            content: ''
+            background-color: $accent
+            width: 9px
+            height: 9px
+            border-radius: 50%
+            top: 16px
+        >li:first-child
+          margin-top: 16px
+          .postTitle
+            margin-top: -21px
+          &:before
+            top: 0px
+        >li:nth-child(odd)
+          text-align: left
+          margin-left: 55%
+          @media screen and (max-width: $screen-xs-max)
+            text-align: left
+            margin-left: 40px
+            width: 79%
+          &:before
+            left: -34px
+            @media screen and (max-width: $screen-xs-max)
+              left: -24px
+
+        >li:nth-child(even)
+          text-align: right
+          margin-left: -5%
+          @media screen and (max-width: $screen-xs-max)
+            text-align: left
+            margin-left: 40px
+            width: 79%
+          &:before
+            right: -35px
+            @media screen and (max-width: $screen-xs-max)
+              left: -24px
+
+        >li:last-child
+          padding: 16px 0 0
+          position: relative
+          .postContent
+            position: absolute
+            width: 100%
+            text-align: right
+            top: 16px
+            right: 0
+            bottom: 0
+            left: 0
+            @media screen and (max-width: $screen-xs-max)
+              text-align: left

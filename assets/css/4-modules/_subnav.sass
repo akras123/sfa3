@@ -1,0 +1,23 @@
+.subnav
+  margin-top: 10px
+  margin-bottom: 30px
+  padding: 0
+  list-style: none
+  width: 100%
+  font-weight: 600
+  @media screen and (max-width: $screen-xs-max)
+    margin-top: 0
+  &.affix-bottom
+    position: absolute
+  li
+    list-style: none
+    padding: 5px 0
+    &.active
+      a
+        color: $navbar-default-link-active-color
+    a
+      color: $navbar-default-link-color
+      &:hover
+        color: $navbar-default-link-active-color
+  .level2
+    padding: 0

@@ -1,0 +1,31 @@
+%background-image
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background:
+    size: cover
+    repeat: no-repeat
+    position: center center
+
+%price
+  margin-top: 25px
+  font:
+    size: 1.3em
+    weight: 500
+    family: $font-family-sans-serif
+  position: relative
+  figcaption
+    text-decoration: none
+    position: absolute
+    top: -35px
+    left: 15px
+    color: $text-color
+    @media screen and (max-width: $screen-xs-max)
+      right: 10px
+      text-align: center
+%price-label
+  white-space: nowrap
+  background-color: $accent
+  padding: 5px 10px
+  border-radius: 15px
+  display: inline-block

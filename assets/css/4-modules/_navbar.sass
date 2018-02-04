@@ -1,0 +1,173 @@
+.navbar-wrapper
+  margin-top: 30px
+  @media screen and (max-width: $screen-xs-max)
+    margin-top: 0px
+.navbar
+  margin-top: 0px
+  margin-bottom: 0px
+  &.navbar-fixed-top
+    @media screen and (max-width: $screen-xs-max)
+      background-color: rgba($brand, 0.9)
+    &.fadeIn
+      background-color: rgba($brand, 0.9)
+      .navbar-nav > li > a
+        padding: 30px
+
+  &.navbar-default
+    //background-color: $accent
+    // border-bottom: 1px solid black
+    border-radius: 0px
+    body.home & // = body.home .navbar.navbar-default 
+      border: none
+    .navbar-nav
+      @media screen and (max-width: $screen-xs-max)
+        padding: 0 0 25px
+      // width: 100%
+      // text-align: center
+      // float: none
+      // >li
+        // float: none
+        // display: inline-block
+        // @media screen and (max-width: $screen-xs-max)
+        //   display: block
+
+      .logo
+        width: 190px
+        // height: 100%
+        display: block
+        margin-right: 25px
+        +transition(width 300ms ease-in-out)
+        @media screen and (max-width: $screen-xs-max)
+          display: block
+          margin: 10px auto
+          width: 290px
+      .dropdown
+        &.open-menu 
+          > li > a
+            //color: #333
+      .dropdown-menu
+        //background-color: $accent
+        @media screen and (max-width: $screen-xs-max)
+          padding-bottom: 25px
+        >li>a
+          line-height: 1.4em
+        .active > a
+          //background-color: $accent
+          color: $text-color
+        .divider
+          //background-color: +tint($accent,50%)
+        > li 
+          > a:focus, > a:hover, > a:active
+            //background-color: $accent
+            // color: $text-color
+      > .open > a
+        //background-color: $accent
+      > li.active > a
+        //background-color: $accent
+        // color: $text-color
+    .navbar-nav>li:first-child>a
+      padding: 0
+    .navbar-nav>li>a
+      +transition(all 300ms linear)
+      padding-top: 15px
+      // text-transform: uppercase
+      // letter-spacing: 2px
+      line-height: 1.4em
+      @media screen and (max-width: $screen-xs-max)
+        padding-top: 5px
+      font:
+        weight: 600
+        style: italic
+      //padding: 60px 30px 5px
+      @media screen and (max-width: $screen-xs-max)
+        //padding: 15px 30px
+    .navbar-toggle
+      //border-color: $navbar-default-bg
+      &:hover, &:focus
+        //background-color: $accent
+        .icon-bar
+          background-color: $navbar-default-link-active-color
+      .icon-bar
+        //background-color: $text-color
+    .navbar-brand
+      color: $brand
+      // padding: 15px 0px 15px 15px
+      opacity: 0
+      @media screen and (max-width: $screen-xs-max)
+        opacity: 1
+      font:
+        size: 14px
+        weight: 700
+      &.animated
+        opacity: 1
+    .navbar-collapse
+      border: none
+      padding: 0 15px 
+.navbar
+  .navbar-nav
+    a.aside
+      display: none
+    li.active
+      ul.dropdown-menu
+        li
+          &.active
+            a
+              color: $brand
+    .open
+      .dropdown-menu
+        .dropdown-header
+          padding: 5px 15px
+      .dropdown-menu>li>a
+        padding: 5px 15px
+@media screen and (max-width: $screen-xs-max)
+  .navbar
+    .navbar-nav
+      margin: 0px -15px
+      li
+        &.registreren
+          margin-bottom: 15px
+        a
+          text-align: center
+          &.aside
+            display: block
+            position: absolute !important
+            top: 0px
+            right: 0px
+            bottom: 0px
+            // width: 30px
+            text-align: center
+      .dropdown
+        a
+          white-space: normal
+          &.aside
+            .glyphicon.glyphicon-plus
+              +transition(all 300ms ease-in-out)
+        &.open
+          a.aside
+            .glyphicon.glyphicon-plus:before
+              content: "\2212"
+
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+  // maakt dropdown actief over hover (icm weghalen data-toggle="dropdown")
+  .navbar
+    .navbar-nav
+      li.dropdown
+        &:hover
+          .dropdown-menu
+            display: block
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max)
+  // maakt dropdown actief over hover (icm weghalen data-toggle="dropdown")
+  .navbar
+    .navbar-nav
+      li.dropdown
+        &:hover
+          .dropdown-menu
+            display: block
+@media screen and (min-width: $screen-lg-min)
+  // maakt dropdown actief over hover (icm weghalen data-toggle="dropdown")
+  .navbar
+    .navbar-nav
+      li.dropdown
+        &:hover
+          .dropdown-menu
+            display: block
