@@ -1,5 +1,5 @@
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.stichtingflyaware.nl" # the base hostname & protocol for your site
+url: "https://akras123.github.io/sfa3" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
