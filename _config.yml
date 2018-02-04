@@ -1,0 +1,513 @@
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.stichtingflyaware.nl" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+port: 4000
+permalink: pretty
+
+exclude: ['CNAME', 'README.md', 'PSD', 'package.json', 'gruntfile.js', 'database.rules.json', 'firebase.json', 'package.json', 'typings', 'tsconfig.json', 'tsd.json', 'node_modules']
+
+plugins_dir:
+- jekyll-sitemap
+
+future: false
+
+# prose.io config
+prose:
+  ignore: [
+    '_site',
+    '.gitignore',
+    '_config.yml',
+    'CNAME',
+    'favicon.ico',
+    'gruntfile.js',
+    'forms.yml',
+    '*.json',
+    '_includes',
+    '_layouts',
+    'build',
+    'PSD',
+    'links.jsonp',
+    'assets/js',
+    'assets/fonts',
+    'assets/css',
+    '*.xml',
+    'node_modules',
+    'typings',
+    '.vscode'
+  ]
+  siteurl: "http://sfa.publiceervoormij.nl"
+  relativeLinks: "http://sfa.publiceervoormij.nl/links.jsonp"
+  media: "assets/img"
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page"
+      - name: "class"
+        field:
+          element: "hidden"
+          value: "page"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "noindex"
+        field:
+          element: "checkbox"
+          label: "Voorkom dat google pagina indexeert"
+          help: "Als ingeschakeld wordt de pagina niet gevonden in zoekmachines."
+          value: false
+      - name: "sitemap"
+        field:
+          element: "checkbox"
+          label: "Neem pagina op in sitemap (SEO)"
+          value: true
+      - name: "published"
+        field:
+          element: "hidden"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "publish"
+        field:
+          element: "checkbox"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          help: "Dit is alternatieve (permanente) link naar dit artikel (blogpost), in plaats van de standaard link /jaartal/maand/dag/titel-van-het-artikel. Deze moet in kleine letters geschreven worden en spaties vervangen door een min-teken."
+          placeholder: "url van pagina"
+          type: "text"
+          value: ""
+      - name: "redirect_from"
+        field:
+          element: "multiselect"
+          label: "Redirect_from"
+          placeholder: "vul url in"
+          alterable: true
+          value: ""
+    _posts/nieuws:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "noindex"
+        field:
+          element: "checkbox"
+          label: "Voorkom dat google pagina indexeert"
+          help: "Als ingeschakeld wordt de pagina niet gevonden in zoekmachines."
+          value: false
+      - name: "sitemap"
+        field:
+          element: "checkbox"
+          label: "Neem pagina op in sitemap (SEO)"
+          value: true
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "parent"
+        field:
+          element: "hidden"
+          label: "parent"
+          value: "/nieuws/"
+      - name: "tags"
+        field:
+          element: "hidden"
+          label: "Tags"
+          help: "Kies één of meerdere tags. Tags worden gebruikt om artikelen (posts) op een bepaalde plaats (pagina) te publiceren in de website."
+          placeholder: "kies tag"
+          value: "Nieuws"
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          help: "Dit is alternatieve (permanente) link naar dit artikel (blogpost), in plaats van de standaard link /jaartal/maand/dag/titel-van-het-artikel. Deze moet in kleine letters geschreven worden en spaties vervangen door een min-teken."
+          placeholder: "url van pagina"
+          type: "text"
+          value: ""
+      - name: "redirect_from"
+        field:
+          element: "multiselect"
+          label: "Redirect_from"
+          placeholder: "vul url in"
+          alterable: true
+          value: ""
+    _posts/sliders:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "showTitle"
+        field:
+          element: "checkbox"
+          label: "Toon titel"
+          help: "Met deze optie kan voorkomen worden dat de titel getoond wordt."
+          value: false
+      - name: "noindex"
+        field:
+          element: "hidden"
+          label: "Voorkom dat google pagina indexeert"
+          help: "Als ingeschakeld wordt de pagina niet gevonden in zoekmachines."
+          value: true
+      - name: "sitemap"
+        field:
+          element: "hidden"
+          label: "Neem pagina op in sitemap (SEO)"
+          value: false
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "tags"
+        field:
+          element: "hidden"
+          label: "Tags"
+          value: "slider"
+      - name: "bgImage"
+        field:
+          element: "text"
+          label: "afbeelding"
+          help: "Deze afbeelding wordt getoond in de slider. De maat van de afbeelding moet zijn: 1920x300 pixels en moet opgeslagen worden in de map /assets/img/slider/."
+    _posts/team:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "class"
+        field:
+          element: "hidden"
+          value: "page"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "noindex"
+        field:
+          element: "checkbox"
+          label: "Voorkom dat google pagina indexeert"
+          help: "Als ingeschakeld wordt de pagina niet gevonden in zoekmachines."
+          value: false
+      - name: "sitemap"
+        field:
+          element: "checkbox"
+          label: "Neem pagina op in sitemap (SEO)"
+          value: true
+      - name: "published"
+        field:
+          element: "hidden"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "publish"
+        field:
+          element: "checkbox"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "tags"
+        field:
+          element: "hidden"
+          label: "Tags"
+          help: "Kies één of meerdere tags, of maak een nieuwe aan. Tags worden gebruikt om artikelen (posts) op een bepaalde plaats (pagina) te publiceren in de website."
+          placeholder: "kies tag"
+          value: bestuur
+      - name: "postFeaturedImage"
+        field:
+          element: "text"
+          label: "Foto teamlid"
+          help: "De maat van de afbeelding moet (liefst) zijn (maximaal): 300x300 pixels en minimaal 115x115 pixels. En moet opgeslagen worden in de map /assets/img/bestuursleden/."
+          placeholder: "bestuursleden/bestandsnaam"
+          value: ""
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          help: "Dit is alternatieve (permanente) link naar dit artikel (blogpost), in plaats van de standaard link /jaartal/maand/dag/titel-van-het-artikel. Deze moet in kleine letters geschreven worden en spaties vervangen door een min-teken."
+          placeholder: "url van pagina"
+          type: "text"
+          value: ""
+      - name: "redirect_from"
+        field:
+          element: "multiselect"
+          label: "Redirect_from"
+          placeholder: "vul url in"
+          alterable: true
+          value: ""
+    _posts/behandelingen:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page-with-menu"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "illustratie"
+        field:
+          element: "multiselect"
+          label: "Illustraties"
+          help: "Kies één of meerdere illustraties."
+          placeholder: "kies een illustratie"
+          options:
+            - name: "illustratie-1.jpg"
+              value: "illustratie-1.jpg"
+            - name: "illustratie-2.jpg"
+              value: "illustratie-2.jpg"
+            - name: "illustratie-3.jpg"
+              value: "illustratie-3.jpg"
+            - name: "illustratie-4.jpg"
+              value: "illustratie-4.jpg"
+            - name: "illustratie-5.jpg"
+              value: "illustratie-5.jpg"
+            - name: "illustratie-6.jpg"
+              value: "illustratie-6.jpg"
+            - name: "illustratie-7.jpg"
+              value: "illustratie-7.jpg"
+          alterable: true
+      - name: "noindex"
+        field:
+          element: "checkbox"
+          label: "Voorkom dat google pagina indexeert"
+          help: "Als ingeschakeld wordt de pagina niet gevonden in zoekmachines."
+          value: false
+      - name: "sitemap"
+        field:
+          element: "checkbox"
+          label: "Neem pagina op in sitemap (SEO)"
+          value: true
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "parent"
+        field:
+          element: "hidden"
+          label: "parent"
+          value: "/behandeling/"
+      - name: "tags"
+        field:
+          element: "hidden"
+          label: "Tags"
+          help: "Kies één of meerdere tags. Tags worden gebruikt om artikelen (posts) op een bepaalde plaats (pagina) te publiceren in de website."
+          placeholder: "kies tag"
+          value: "behandeling"
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          help: "Dit is alternatieve (permanente) link naar dit artikel (blogpost), in plaats van de standaard link /jaartal/maand/dag/titel-van-het-artikel. Deze moet in kleine letters geschreven worden en spaties vervangen door een min-teken."
+          placeholder: "url van pagina"
+          type: "text"
+          value: ""
+      - name: "redirect_from"
+        field:
+          element: "multiselect"
+          label: "Redirect_from"
+          placeholder: "vul url in"
+          alterable: true
+          value: ""
+    _posts/onderzoek:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page-with-menu"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "illustratie"
+        field:
+          element: "multiselect"
+          label: "Illustraties"
+          help: "Kies één of meerdere illustraties."
+          placeholder: "kies een illustratie"
+          options:
+            - name: "illustratie-1.jpg"
+              value: "illustratie-1.jpg"
+            - name: "illustratie-2.jpg"
+              value: "illustratie-2.jpg"
+            - name: "illustratie-3.jpg"
+              value: "illustratie-3.jpg"
+            - name: "illustratie-4.jpg"
+              value: "illustratie-4.jpg"
+            - name: "illustratie-5.jpg"
+              value: "illustratie-5.jpg"
+            - name: "illustratie-6.jpg"
+              value: "illustratie-6.jpg"
+            - name: "illustratie-7.jpg"
+              value: "illustratie-7.jpg"
+          alterable: true
+      - name: "noindex"
+        field:
+          element: "checkbox"
+          label: "Voorkom dat google pagina indexeert"
+          help: "Als ingeschakeld wordt de pagina niet gevonden in zoekmachines."
+          value: false
+      - name: "sitemap"
+        field:
+          element: "checkbox"
+          label: "Neem pagina op in sitemap (SEO)"
+          value: true
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "parent"
+        field:
+          element: "hidden"
+          label: "parent"
+          value: "/onderzoek/"
+      - name: "tags"
+        field:
+          element: "hidden"
+          label: "Tags"
+          help: "Kies één of meerdere tags. Tags worden gebruikt om artikelen (posts) op een bepaalde plaats (pagina) te publiceren in de website."
+          placeholder: "kies tag"
+          value: "onderzoek"
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          help: "Dit is alternatieve (permanente) link naar dit artikel (blogpost), in plaats van de standaard link /jaartal/maand/dag/titel-van-het-artikel. Deze moet in kleine letters geschreven worden en spaties vervangen door een min-teken."
+          placeholder: "url van pagina"
+          type: "text"
+          value: ""
+      - name: "redirect_from"
+        field:
+          element: "multiselect"
+          label: "Redirect_from"
+          placeholder: "vul url in"
+          alterable: true
+          value: ""
+    _posts/informatie:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page-with-menu"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "illustratie"
+        field:
+          element: "multiselect"
+          label: "Illustraties"
+          help: "Kies één of meerdere illustraties."
+          placeholder: "kies een illustratie"
+          options:
+            - name: "illustratie-1.jpg"
+              value: "illustratie-1.jpg"
+            - name: "illustratie-2.jpg"
+              value: "illustratie-2.jpg"
+            - name: "illustratie-3.jpg"
+              value: "illustratie-3.jpg"
+            - name: "illustratie-4.jpg"
+              value: "illustratie-4.jpg"
+            - name: "illustratie-5.jpg"
+              value: "illustratie-5.jpg"
+            - name: "illustratie-6.jpg"
+              value: "illustratie-6.jpg"
+            - name: "illustratie-7.jpg"
+              value: "illustratie-7.jpg"
+          alterable: true
+      - name: "noindex"
+        field:
+          element: "checkbox"
+          label: "Voorkom dat google pagina indexeert"
+          help: "Als ingeschakeld wordt de pagina niet gevonden in zoekmachines."
+          value: false
+      - name: "sitemap"
+        field:
+          element: "checkbox"
+          label: "Neem pagina op in sitemap (SEO)"
+          value: true
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "parent"
+        field:
+          element: "hidden"
+          label: "parent"
+          value: "/informatie/"
+      - name: "tags"
+        field:
+          element: "hidden"
+          label: "Tags"
+          help: "Kies één of meerdere tags. Tags worden gebruikt om artikelen (posts) op een bepaalde plaats (pagina) te publiceren in de website."
+          placeholder: "kies tag"
+          value: "informatie"
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          help: "Dit is alternatieve (permanente) link naar dit artikel (blogpost), in plaats van de standaard link /jaartal/maand/dag/titel-van-het-artikel. Deze moet in kleine letters geschreven worden en spaties vervangen door een min-teken."
+          placeholder: "url van pagina"
+          type: "text"
+          value: ""
+      - name: "redirect_from"
+        field:
+          element: "multiselect"
+          label: "Redirect_from"
+          placeholder: "vul url in"
+          alterable: true
+          value: ""
+    _posts/home-circles:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "noindex"
+        field:
+          element: "hidden"
+          label: "Voorkom dat google pagina indexeert"
+          help: "Als ingeschakeld wordt de pagina niet gevonden in zoekmachines."
+          value: true
+      - name: "sitemap"
+        field:
+          element: "checkbox"
+          label: "Neem pagina op in sitemap (SEO)"
+          value: false
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Publiceer op website"
+          help: "Schakel uit om pagina niet te tonen in de website."
+          value: true
+      - name: "tags"
+        field:
+          element: "hidden"
+          label: "Tags"
+          help: "Kies één of meerdere tags. Tags worden gebruikt om artikelen (posts) op een bepaalde plaats (pagina) te publiceren in de website."
+          placeholder: "kies tag"
+          value: "circle"
