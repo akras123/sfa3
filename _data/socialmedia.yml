@@ -1,0 +1,6 @@
+- icon: Facebook
+  url: 'https://nl-nl.facebook.com/FlyAware/'
+  publish: true
+- icon: Twitter
+  url: 'https://twitter.com/FlyAware'
+  publish: true

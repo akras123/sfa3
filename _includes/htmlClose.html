@@ -1,0 +1,39 @@
+{% if jekyll.environment == 'development' %}
+		<!-- dev -->
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<!-- Bootstrap -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- Moment.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.js"></script>
+		<!-- jQuery Validation -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.js"></script>
+		<!-- Slick Carousel -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+		<!-- Bootstrap Datepicker -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.nl.min.js"></script>
+
+		<!-- custom code -->
+		<script src="{{ "/assets/js/jquery.validate.addMethod.js" | prepend: site.baseurl }}"></script>
+		<script src="{{ "/assets/js/maps.js" | prepend: site.baseurl }}"></script>
+		<script src="{{ "/assets/js/sliders.js" | prepend: site.baseurl }}"></script>
+		<script src="{{ "/assets/js/config.js" | prepend: site.baseurl }}"></script>
+		<script src="{{ "/assets/js/form-afspraak.js" | prepend: site.baseurl }}"></script>
+		<script src="{{ "/assets/js/form-contact.js" | prepend: site.baseurl }}"></script>
+		<script src="{{ "/assets/js/form-intake.js" | prepend: site.baseurl }}"></script>
+		<!--script src="{{ "/assets/js/bestuursleden.js" | prepend: site.baseurl }}"></script-->
+		<script src="{{ "/assets/js/circles-home.js" | prepend: site.baseurl }}"></script>
+		<!--script src="{{ "/assets/js/ledenModal.js" | prepend: site.baseurl }}"></script-->
+		<script src="{{ "/assets/js/functions.js" | prepend: site.baseurl }}"></script>
+		<script src="{{ "/assets/js/browserDetect.js" | prepend: site.baseurl }}"></script>
+		{% else %}
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script src="{{ "/build/js/scripts.min.js?v1.0.4" | prepend: site.baseurl }}"></script>
+		{% endif %}
+	</body>
+</html>

@@ -1,0 +1,20 @@
+---
+layout: default
+class: post
+---
+{% include slider.html %}
+<section class="container-fluid {{page.class}}">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9 col-sm-offset-1 col-md-6 col-md-offset-3 content">
+        <h1 class="pageTitle">{{page.title}}</h1>
+				{{ content }}
+				{% if page.taal == "eng" %}
+					<p><a href="javascript: history.go(-1)" title="go back">« go back</a></p>
+				{% else %}
+					<p><a href="javascript: history.go(-1)" title="ga terug">« ga terug</a></p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

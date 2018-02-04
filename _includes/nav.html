@@ -1,0 +1,78 @@
+{% assign page_active = page.url | downcase | replace: ' ', '-' %}
+{% assign page_parent = page.parent | downcase | replace: ' ', '-' %}
+{% if page.taal == "eng" %}
+  {% assign menustart = "home2" %}
+  {% assign pointer = "go to" %}
+  {% assign urlbase = "/eng/" %}
+{% else %}
+  {% assign menustart = "home" %}
+  {% assign pointer = "ga naar" %}
+  {% assign urlbase = "/" %}
+{% endif %}
+
+<nav class="navbar-wrapper">
+  <div class="navbar navbar-default animated">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target="#main" class="navbar-toggle collapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+  <a href="{{site.baseurl}}/" class="navbar-brand visible-xs" title= "pointer Home">{{site.data.settings.company}}</a>
+ </div><!--1: ?-->
+ <div id="main" class="collapse navbar-collapse">
+   <ul class="nav navbar-nav">
+      <li>
+        <a href="{{urlbase}}" title= "{{pointer}} Home"><img src="/assets/img/{{site.data.settings.seo.logo}}" alt="logo van {{site.data.settings.company}}" class="logo"></a>
+      </li><!--2: muiswijzer op logo-->
+    {% for menu in site.data.menu.[include.menu].level1 %}
+      {% assign menu_active = menu.url %}
+      {% if menu.level2.size > 0 and menu.showlevel2 == true %}
+         <li class="dropdown{% if page_active == menu_active or page_parent == menu_active %} active{% endif %}">
+            <a href="{{site.baseurl}}{{menu.url}}" title= "{{pointer}} {{menu.title}}" role="button" aria-haspopup="true" aria-expanded="false" class="hidden-xs dropdown-toggle">{{menu.title}} <span class="caret"></span></a>
+            <!--3: muiswijzer hoofdmenu-->
+            <a href="{{site.baseurl}}{{menu.url}}" class="visible-xs">{{menu.title}}</a>
+            <a href="{{site.baseurl}}#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="aside"><span class="glyphicon glyphicon-plus visible-xs"></span></a>
+            {% for submenu in menu.level2 %}
+               {% if forloop.first %}<ul class="dropdown-menu">{% endif %}
+               <li>
+               <a href="{{site.baseurl}}{{menu.url}}{{submenu.url}}" title="{{pointer}} {{submenu.title}}" >{{submenu.title}}</a>
+               <!--4: muiswijzer submenu boven-->
+               </li>
+               {% if forloop.last %}</ul> <!--end dropdown-menu -->{% endif %}
+            {% endfor %}
+          </li>
+       {% elsif menu.tag %}
+          <li class="dropdown{% if page_active == menu_active or page_parent == menu_active %} active {% endif %}">
+            <a href="{{site.baseurl}}{{menu.url}}" title="{{pointer}} {{menu.title}}" role="button" aria-haspopup="true" aria-expanded="false" class="hidden-xs dropdown-toggle">{{menu.title}} <span class="caret"></span></a>
+            <!--5: ?-->
+            <a href="{{site.baseurl}}{{menu.url}}" title="{{pointer}} {{menu.title}}" class="visible-xs">{{menu.title}}</a>
+            <!--6: muiswijzer in hoofdmenu  (tag)-->
+            <a href="{{site.baseurl}}#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="aside"><span class="glyphicon glyphicon-plus visible-xs"></span></a>
+            {% for submenu in site.tags[menu.tag] %}
+              {% if submenu.publish != false %}
+                {% if forloop.first %}<ul class="dropdown-menu">{% endif %}
+                <li>
+                <a href="{{site.baseurl}}{{submenu.url}}" title="{{pointer}} {{menu.title}}">{{submenu.title}}</a>
+                <!--7: muiswijzer in submenu boven (tag)-->
+                </li>
+                {% if forloop.last %}</ul> <!--end dropdown-menu tags -->{% endif %}
+              {% endif %}
+            {% endfor %}
+          </li>
+          {% else %}
+          {% if menu.publish != false %}
+            <li class="{% if menu.class %}{{menu.class}} {% endif %}{% if page_active == menu_active or page_parent == menu_active %} active{% endif %}{%if menu_active == 'home' %} hidden-sm {%endif%}">
+            <a href="{{site.baseurl}}{{menu.url}}" title="{{pointer}} {{menu.title}}" >{{ menu.title }}</a>
+            <!--8: muiswijzer hoofdmenu zonder submenu-->
+            </li>{%endif%}
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

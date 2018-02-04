@@ -1,0 +1,9 @@
+<div class="form-group has-feedback {{include.form.class}}">
+  <label for="{{include.form.name}}">{{include.form.title}}</label>
+  <input type="hidden" role="uploadcare-uploader" name="{{include.form.name}}" id="{{include.form.name}}"
+       data-crop="720x350"
+       data-image-shrink="1024x1024"
+       data-preview-step="true"
+       data-images-only="true" />
+  {% if form.info %} <p class="alert alert-warning"><i class="glyphicon glyphicon-info-sign"></i> {{form.info}}</p>{% endif %}
+</div>

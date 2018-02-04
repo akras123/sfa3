@@ -1,0 +1,16 @@
+{% for post in site.tags['slider'] %}
+{% if forloop.first == true %}<div class="slider">{% endif %}
+  {% if post.publish != false %}
+  <div style="background-image: url('{{site.baseurl}}/assets/img/slider/{{post.bgImage}}')" class="slider-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 slide">
+          {% if post.showTitle %}<h4>{{post.title}}</h4>{% endif %}
+          {{post.content}}
+          {% for tag in post.tags %}{% if tag == 'nieuws'%}<p><a href="{{site.baseurl}}{{post.url}}" title class="readmore">Lees meer »</a></p>{% endif %}{% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>{% endif %}
+{% if forloop.last == true %}</div>{% endif %}
+{% endfor %}

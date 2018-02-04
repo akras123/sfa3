@@ -1,0 +1,7 @@
+<div class="loading hidden" id="loading-image">loading...</div>
+<img class="img-responsive upload" />
+<div class="form-group has-feedback {{include.form.class}}">
+  <label for="{{include.form.name}}">{{include.form.title}}</label>
+  <input type="{{include.form.type}}" name="{{include.form.name}}" placeholder="{{include.form.placeholder}}" class="form-control{% if include.form.required %} required{% endif %}" id="{{include.form.name}}" {% if include.form.required%}required{%endif%} value="{{include.form.value}}">
+  {% if form.info %} <p class="alert alert-warning"><i class="glyphicon glyphicon-info-sign"></i> {{form.info}}</p>{% endif %}
+</div>

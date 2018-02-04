@@ -1,0 +1,17 @@
+<section class="container-fluid logos">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        {% for post in site.tags['School'] %}
+        {% if forloop.first == true %}<ul class="list-inline">{% endif %}
+          <li>
+            <a href="{{post.url}}" title="ga naar {{post.title}}">
+              <img src="/assets/img/{{post.logo}}" alt="logo van {{post.title}}">
+            </a>
+          </li>
+        {% if forloop.last == true %}</ul>{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,445 @@
+form-contact:
+  id: contact
+  title: Contactformulier
+  intro: Na ontvangst van het ingevulde contactformulier nemen wij zo snel als mogelijk (in ieder geval binnen 3 dagen) contact met je op.
+  inputs:
+  - title:
+    type: cols
+    cols: col-sm-6
+    inputs:
+      - name: VOORNAAM
+        title: voornaam
+        type: text
+        placeholder: voornaam
+        required: true
+      - name: ACHTERNAAM
+        title: achternaam
+        type: text
+        placeholder: achternaam
+        required: true
+  - name: EMAIL
+    type: email
+    title: e-mailadres
+    placeholder: e-mailadres
+    required: true
+  - name: TELEFOON
+    type: text
+    title: telefoonnummer
+    placeholder: telefoonnummer
+    required: true
+  - name: OPMERKING
+    title: vraag/opmerking
+    type: textarea
+    placeholder: vraag/opmerking
+    required: true
+  - name: verzenden
+    type: submit
+    class: btn-primary
+
+form-contact-eng:
+  id: contact
+  title: Contact Form
+  intro: After receiving the filled out contact form, we will contact you as soon as possible (within 3 days).
+  inputs:
+  - title:
+    type: cols
+    cols: col-sm-6
+    inputs:
+      - name: VOORNAAM
+        title: voornaam
+        type: text
+        placeholder: first name
+        required: true
+      - name: ACHTERNAAM
+        title: achternaam
+        type: text
+        placeholder: family name
+        required: true
+  - name: EMAIL
+    type: email
+    title: e-mailadres
+    placeholder: e-mail address
+    required: true
+  - name: TELEFOON
+    type: text
+    title: telefoonnummer
+    placeholder: phone number
+    required: true
+  - name: OPMERKING
+    title: vraag/opmerking
+    type: textarea
+    placeholder: question/remark
+    required: true
+  - name: submit
+    type: submit
+    class: btn-primary
+
+form-afspraak:
+  id: afspraak
+  title: Aanvraag Intakegesprek
+  intro: Na ontvangst van je aanvraag voor een intakegesprek nemen we (in ieder geval binnen 3 dagen) contact met je op.
+  inputs:
+  - title:
+    type: cols
+    cols: col-sm-6
+    inputs:
+      - name: VOORNAAM
+        title: voornaam
+        type: text
+        placeholder: voornaam
+        required: true
+      - name: ACHTERNAAM
+        title: achternaam
+        type: text
+        placeholder: achternaam
+        required: true
+  - name: EMAIL
+    type: email
+    title: e-mailadres
+    placeholder: e-mailadres
+    required: true
+  - name: TELEFOON
+    type: text
+    title: telefoonnummer
+    placeholder: telefoonnummer
+    required: true
+  - name: OPMERKING
+    title: vraag/opmerking
+    type: textarea
+    placeholder: vraag/opmerking
+    required: true
+  - name: verzenden
+    type: submit
+    class: btn-primary
+
+form-afspraak-eng:
+  id: afspraak
+  title: Apply for Intake Consult
+  intro: After receiving the filled out contact form, we will contact you as soon as possible (within 3 days).
+  inputs:
+  - title:
+    type: cols
+    cols: col-sm-6
+    inputs:
+      - name: VOORNAAM
+        title: voornaam
+        type: text
+        placeholder: first name
+        required: true
+      - name: ACHTERNAAM
+        title: achternaam
+        type: text
+        placeholder: family name
+        required: true
+  - name: EMAIL
+    type: email
+    title: e-mailadres
+    placeholder: e-mail address
+    required: true
+  - name: TELEFOON
+    type: text
+    title: telefoonnummer
+    placeholder: phone number
+    required: true
+  - name: OPMERKING
+    title: vraag/opmerking
+    type: textarea
+    placeholder: question/remark
+    required: true
+  - name: submit
+    type: submit
+    class: btn-primary
+
+form-intake:
+  id: intake
+  title: Intakelijst Fly Aware
+  intro: 
+  inputs:
+  - title:
+    type: cols
+    cols: col-sm-6
+    inputs:
+      - name: VOORNAAM
+        title: voornaam
+        type: text
+        placeholder: voornaam
+        required: true
+      - name: ACHTERNAAM
+        title: achternaam
+        type: text
+        placeholder: achternaam
+        required: true
+  - name: STRAAT
+    title: straat en huisnummer
+    type: text
+    placeholder: straat en huisnummer
+    required: true
+  - title:
+    type: cols
+    cols: col-sm-6
+    inputs:
+      - name: POSTCODE
+        title: postcode
+        type: text
+        placeholder: postcode
+        required: true
+      - name: PLAATS
+        title: plaats
+        type: text
+        placeholder: plaats
+        required: true  
+  - name: GEBOORTEDATUM
+    type: text
+    title: Geboortedatum
+    placeholder: Geboortedatum (dd-mm-jjjj)
+    required: true
+    class: datum
+  - name: GESLACHT
+    title: geslacht
+    type: radio
+    required: true
+    value: man
+  - name: GESLACHT
+    title: geslacht
+    type: radio
+    required: true
+    value: vrouw
+  - name: BEROEP
+    type: text
+    title: beroep
+    placeholder: beroep
+    required: true
+  - name: Aantal vlieguren
+    type: number
+    title: Aantal vlieguren
+    placeholder: Aantal vlieguren
+    required: true
+  - name: SOORT_VLIEGTUIG
+    type: text
+    title: soort vliegtuig
+    placeholder: soort vliegtuig
+    required: true
+  - name: PARTNERSCHAP
+    title: partnerschap
+    type: radio
+    required: true
+    value: alleen
+  - name: PARTNERSCHAP
+    title: partnerschap
+    type: radio
+    required: true
+    value: samenwonend
+  - name: PARTNERSCHAP
+    title: partnerschap
+    type: radio
+    required: true
+    value: gehuwd
+  - name: KINDEREN_LEEFTIJD
+    type: text
+    title: kinderen (leeftijd)
+    placeholder: kinderen (leeftijd)
+    required: false
+  - name: TELEFOON
+    type: text
+    title: telefoonnummer
+    placeholder: telefoonnummer
+    required: true
+  - name: EMAIL
+    type: email
+    title: e-mailadres
+    placeholder: e-mailadres
+    required: true
+  - name: HUISARTS_NAAM
+    type: text
+    title: naam huisarts
+    placeholder: naam huisarts
+    required: true
+  - name: KLACHTEN
+    title: klacht(en)
+    type: textarea
+    placeholder: klacht(en)
+    required: true
+  - name: KLACHTEN_WANNEER
+    type: text
+    title: sinds wanneer (klachten)
+    placeholder: sinds wanneer (klachten)
+    required: true
+  - name: BEHANDELMETHODEN
+    type: textarea
+    title: behandelmethoden
+    placeholder: behandelmethoden
+    required: false
+  - name: RESULTATEN
+    type: textarea
+    title: resultaten
+    placeholder: resultaten
+    required: false
+  - name: MEDICATIE
+    type: textarea
+    title: medicatie
+    placeholder: medicatie
+    required: false
+  - name: SUPPLEMENTEN
+    type: textarea
+    title: supplementen
+    placeholder: supplementen
+    required: true
+  - title: Roken?
+    type: row
+    cols: col-sm-10
+    class: row options
+    inputs:
+      - title: 
+        type: row
+        cols: col-sm-2
+        inputs:
+          - name: ROKEN
+            title: roken
+            type: radio
+            required: true
+            value: ja
+          - name: ROKEN
+            title: roken
+            type: radio
+            required: true
+            value: nee
+  - name: ROKEN_JA_HOEVEEL_PER_DAG
+    title: indien ja, hoeveel per dag
+    type: text
+    placeholder: indien ja, hoeveel per dag
+    class: animated hidden
+    required: false
+  - title: Alcohol drinken?
+    type: row
+    cols: col-sm-2
+    class: row options
+    inputs:
+      - title: 
+        type: row
+        cols: col-sm-2
+        inputs:
+          - name: ALCOHOL_DRINKEN
+            title: alcohol drinken
+            type: radio
+            required: true
+            value: ja
+          - name: ALCOHOL_DRINKEN
+            title: alcohol drinken
+            type: radio
+            required: true
+            value: nee
+  - name: ALCOHOL_JA_HOEVEEL_PER_WEEK
+    title: indien ja, hoeveel per week
+    type: text
+    placeholder: indien ja, hoeveel per week
+    class: animated hidden
+    required: false
+  - name: BEWEGING
+    title: beweging (sport)
+    type: text
+    placeholder: beweging (sport)
+    required: true
+  - name: ERFELIJKE_AANDOENINGEN_IN_FAMILIE
+    title: erfelijke aandoeningen in familie
+    type: textarea
+    placeholder: erfelijke aandoeningen in familie
+    required: true
+  - name: LITTEKENS
+    title: littekens
+    type: text
+    placeholder: littekens
+    required: true
+  - name: ONGEVALLEN_TRAUMAS
+    title: ongevallen/trauma's
+    type: textarea
+    placeholder: ongevallen/trauma's
+    required: false
+  - title: Aankruisen alleen bij JA
+    type: row
+    cols: col-sm-12
+    class: row options
+    inputs:
+      - title: klachten
+        type: row
+        cols: col-sm-12
+        inputs:
+          - name: KLACHT_HOOFDPIJN
+            title: hoofdpijn
+            type: checkbox
+            checked: false
+          - name: KLACHT_LANGDURIGE_VERKOUDHEID
+            title: langdurige verkoudheid
+            type: checkbox
+            checked: false
+          - name: KLACHT_DUIZELIGHEID
+            title: duizeligheid
+            type: checkbox
+            checked: false
+          - name: KLACHT_SLECHTE_CONCENTRATIE
+            title: slechte concentratie
+            type: checkbox
+            checked: false
+          - name: KLACHT_GEHEUGENVERLIES
+            title: geheugenverlies
+            type: checkbox
+            checked: false
+          - name: KLACHT_EMOTIES
+            title: emoties
+            type: checkbox
+            checked: false
+          - name: KLACHT_VERWARDHEID
+            title: verwardheid
+            type: checkbox
+            checked: false
+          - name: KLACHT_ANGST
+            title: angst
+            type: checkbox
+            checked: false
+          - name: KLACHT_VERMOEIDHEID
+            title: vermoeidheid
+            type: checkbox
+            checked: false
+          - name: KLACHT_VERHOOGDE_BLOEDDRUK
+            title: verhoogde bloeddruk
+            type: checkbox
+            checked: false
+          - name: KLACHT_TREMOR
+            title: tremor
+            type: checkbox
+            checked: false
+          - name: KLACHT_OORSUIZEN
+            title: oorsuizen
+            type: checkbox
+            checked: false
+          - name: KLACHT_KRAMPEN
+            title: krampen
+            type: checkbox
+            checked: false
+          - name: KLACHT_ZENUWACHTIG
+            title: zenuwachtig
+            type: checkbox
+            checked: false
+          - name: KLACHT_SLECHT_SLAPEN
+            title: slecht slapen
+            type: checkbox
+            checked: false
+          - name: KLACHT_KOUDE_HANDEN_EN_KOUDE_VOETEN
+            title: koude handen en koude voeten
+            type: checkbox
+            checked: false
+          - name: KLACHT_BEPAALDE_GEUREN_SLECHT_VERDRAGEN
+            title: bepaalde geuren slecht verdragen
+            type: checkbox
+            checked: false
+          - name: KLACHT_DARMKLACHTEN
+            title: darmklachten
+            type: checkbox
+            checked: false
+  - name: OPMERKING
+    title: vraag/opmerking
+    type: textarea
+    placeholder: vraag/opmerking
+    required: false
+  - name: verzenden
+    type: submit
+    class: btn-primary

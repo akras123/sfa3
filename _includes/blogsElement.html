@@ -1,0 +1,118 @@
+<div class="element {{include.class}}">
+  <div class="blogsElement" {% if include.affix %}data-spy="affix" data-offset-top="0" data-offset-bottom="400"{% endif %}>
+    <div class="blogList">
+      <ul>{% if include.slick %}
+        <div class="{{include.slick}}">{%endif%}
+          {% capture curMonth %}{{'now' | date: '%m'}}{% endcapture %}
+          {% assign page_url = page.url %}
+          {% assign i = 0 %}
+          {% for post in site.tags[include.tag] limit: include.limit %}
+
+          {% if post.publish != false %}
+          {% assign i = i | plus: 1 %}
+
+
+          <li {% if include.display == 'ListClick' %}style="background-image:url('/assets/img/{{image}}')"{% endif %}>
+            {% if include.postFeaturedImage == true and post.postFeaturedImage %}
+            <div class="postFeaturedImage">
+              {% if include.link %}<a {% if include.modal %}href="#" data-toggle="modal" data-target="#{{i}}"{% else %}href="{{post.url}}"{% endif %} title="lees meer over {{post.title}}"><img src="/assets/img/{{post.postFeaturedImage}}" alt="{{post.title}}" class=""></a>{% else %}<img src="/assets/img/{{post.postFeaturedImage}}" alt="{{post.title}}" class="">{% endif %}
+            </div>{% endif %}
+
+            {% if include.postThumb == true and post.postThumb %}
+            <div class="postThumb">
+              <a href="{{post.url}}" title="{{post.title}}" >
+                <img src="/assets/{{post.postThumb}}" title="{{post.title}}" class="img-responsive"/>
+              </a>
+            </div>{% endif %}
+
+            {% if include.slick %}<div class="{{include.slick}}">{% endif %}
+            <div class="postContent {{include.display}} {{post.class}}">
+              {% if include.display != 'ListClick' %}
+              <h3 class="postTitle">
+                {% if include.link %}
+                {% if page_url != post.url %}<a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a>{% else %}{{post.title}}{% endif %}
+                {% else %}
+                {{post.title}}
+                {% endif %}
+              </h3>{% endif%}
+
+              {% if include.display == 'ListWithBody' %}
+              <div class="postBody{% if post.prijs %} media-body{% endif %}">
+                {{post.content}}
+                {% if include.button == true %}
+                <a href="{{post.url}}" class="btn btn-primary btn-sm">lees meer</a>
+                {% endif %}
+              </div>
+
+              {% if post.prijs %}
+              <div class="media-right">
+                <figure class="prijs{% if post.aanbieding %} aanbieding{% endif %}">
+                  {% if post.aanbieding or post.prijs-vanaf %}<figcaption>{% if post.prijs-vanaf == true %}vanaf{% else %}normaal{% endif %}</figcaption>{% endif %}
+                  € {{post.prijs}}
+                </figure>
+                {% if post.aanbieding %}<figure class="aanbieding">
+                  <figcaption>nu voor</figcaption>
+                  € {{post.aanbieding}}
+                </figure>{% endif %}
+              </div>{% endif %}
+
+              {% elsif include.display == 'ListWithSummary' and post.caption != null %}
+              <div class="postBody">
+                {% if post.jobtitle %}<h3>{{post.jobtitle}}</h3>{% endif %}
+                <h3>{{post.caption}}</h3>
+                {{post.excerpt}}
+                {% if include.button == true %}
+                <a href="{{post.url}}" class="btn btn-primary btn-sm">lees meer</a>
+                {% endif %}
+              </div>
+              {% elsif include.display == 'ListWithSummary' and post.caption == null %}
+              <div class="postBody">
+                {% if post.jobtitle %}<h3>{{post.jobtitle}}</h3>{% endif %}
+                {{post.excerpt}}
+                {% if include.button == true %}
+                <span class="readMore"><a href="{{post.url}}" title="lees meer over {{post.title}}">lees verder »</a></span>
+                {% endif %}
+              </div>
+              {% elsif include.display == 'ListClick' %}
+              <div class="postBody">
+                <a href="{{post.url}}">
+                  <h3 class="postTitle">{{post.title}}</h3>
+                  <p>{{post.caption}}</p>
+                </a>
+              </div>
+              {% endif %}
+              {% if include.postInfo %}
+              <div class="postInfo"><span class="postDate">{{post.date | date: "%d-%m-%Y" }}</span></div>{% endif %}
+
+            </div>
+            {% if include.slick %}</div>{% endif %}
+          </li>
+          {% if include.modal %}<div tabindex="-1" role="dialog" id="{{i}}" class="modal fade" style="display: none;">
+            <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                    <span aria-hidden="true">x</span>
+                  </button>
+                  <h4 class="modal-title">{{post.title}}</h4>
+                </div>
+                <div class="modal-body">
+                  <img src="/assets/img/banners/{{post.postFeaturedImage}}" alt="Narda Veugelers" class="img-responsive">
+                  {{post.content}}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" data-dismiss="modal" class="btn btn-default">Sluit</button>
+                </div>
+              </div>
+            </div>
+          </div>{% endif %}
+          {% endif %}
+          {% endfor %}
+        {% if include.slick %}</div>{%endif%}
+        {% if i == 0 %}
+        <li>{{include.info}}</li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>

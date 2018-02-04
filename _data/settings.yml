@@ -1,0 +1,40 @@
+# Site settings
+title: "Stichting Fly Aware"
+company: "Stichting Fly Aware"
+email: "flyaware@gmail.com"
+description: >
+  "Stichting Fly Aware ..."
+
+seo:
+  description: "Stichting Fly Aware ..."
+  keywords: ''
+  logo: 'logos/logo-flyaware.svg'
+  #rel-author: 'Publiceervoormij.nl'
+  #rel-publisher: 'Publiceervoormij.nl'
+  #web-design: 'Publiceervoormij.nl'
+  #web-author: 'Publiceervoormij.nl'
+  robots: 'index,follow'
+
+#Google Analytics
+ga:
+  id: 'UA-90330740-1'
+  url: 'auto'
+
+colofon:
+  - title: Webmaster
+    publish: true
+    name: Akrasoft
+    url: http://www.akrasoft.nl
+
+contact:
+  - Blikkenburgerlaan 1
+  - 3703 CV Zeist
+
+telefoon: 085-0654839
+
+#email: flyaware@gmail.com
+
+postadres:
+  - Blikkenburgerlaan 1
+  - 3703 CV Zeist
+  - <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:flyaware@gmail.com">flyaware@gmail.com</a>

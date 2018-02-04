@@ -1,0 +1,32 @@
+<ul class="level1">
+{% for menu in site.data.menu.[include.menu].level1 %}
+	{% if menu.publish != false %}
+	<li>
+		<a href="{{site.baseurl}}{{menu.url}}">{{menu.title}}</a>
+		{% if menu.level2.size > 0  or menu.tag %}
+		<ul class="level2">
+			{% for submenu in menu.level2 %}
+			{% if submenu.publish != false %}
+			<li>
+				<a href="{{menu.url}}{{submenu.url}}">{{submenu.title}}</a>
+				<ul class="level3">
+				{% for post in site.tags[{{submenu.class}}] %}
+				{% if post.publish != false %}
+				<li {% if page.url == post.url %}class="active"{% endif %}><a href="{{post.url}}" title="ga naar {{post.title}}">{{post.title}}</a></li>
+				{%endif%}
+				{% endfor %}
+				</ul>
+			</li>
+			{% endif %}
+			{% endfor %}
+			{% for post in site.tags[{{menu.tag}}] %}
+			{% if post.publish != false %}
+			<li><a href="{{post.url}}" title="ga naar {{post.title}}">{{post.title}}</a></li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</li>
+	{% endif %}
+{% endfor %}
+</ul>

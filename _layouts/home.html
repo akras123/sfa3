@@ -1,0 +1,49 @@
+---
+layout: default
+class: home
+---
+{% include slider.html %}
+<section class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="wrapper-circles">
+
+        {% if page.taal == "eng" %}
+          {% for post in site.tags['circle2'] limit:3 %}<div class="wrapper-circle">
+            <div class="element">
+              <div class="textElement">
+                <h3>{{post.title}}</h3>
+                {{post.excerpt}}
+              </div>
+            </div>
+          </div>{% endfor %}
+        {% else %}
+          {% for post in site.tags['circle'] limit:3 %}<div class="wrapper-circle">
+            <div class="element">
+              <div class="textElement">
+                <h3>{{post.title}}</h3>
+                {{post.excerpt}}
+              </div>
+            </div>
+          </div>{% endfor %}
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5 content">
+      <h1 class="pageTitle">{{page.title}}</h1>
+      {{content}}
+    </div>
+    <aside class="col-sm-5 col-sm-offset-1">
+      <a class="twitter-timeline" min-height="600" data-tweet-limit="3" data-lang="nl" data-link-color="#4b87c7" href="https://twitter.com/FlyAware">Tweets by FlyAware</a>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      {% if page.illustratie %}
+      {% for illustratie in page.illustratie %}
+      <img src="/assets/img/illustraties/{{illustratie}}" alt="illustratie {{page.title}}  gemaakt door Erwin Hogeboom">
+      {% endfor %}
+      {% endif %}
+    </aside>
+  </div>
+</section>

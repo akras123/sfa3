@@ -1,0 +1,80 @@
+<form name="{{site.data.forms.[include.formulier].id}}form" id="{{site.data.forms.[include.formulier].id}}form" role="form" class="form{% if site.data.forms.[include.formulier].class %} {{site.data.forms.[include.formulier].class}}{%endif%}">
+  <div class="">
+    <a name="{{site.data.forms.[include.formulier].id}}" id="{{site.data.forms.[include.formulier].id}}" class="target"></a>
+    {% if site.data.forms.[include.formulier].title %}<h2>{{site.data.forms.[include.formulier].title}}</h2>{% endif %}
+    {% if site.data.forms.[include.formulier].intro %}{{site.data.forms.[include.formulier].intro | markdownify }}{% endif %}
+    {% for form in site.data.forms.[include.formulier].inputs %}
+      {% if form.type == 'hidden' %}
+        {% include form/hidden.html form=form %}
+      {% elsif form.type == 'select' %}
+        {% include form/select.html form=form %}
+      {% elsif form.type == 'textarea' %}
+        {% include form/textarea.html form=form %}
+      {% elsif form.type == 'checkbox' %}
+        {% include form/checkbox.html form=form %}
+      {% elsif form.type == 'radio' %}
+        {% include form/radio.html form=form %}
+      {% elsif form.type == 'file' %}
+        {% include form/file.html form=form %}
+      {% elsif form.type == 'image' %}
+        {% include form/image.html form=form %}
+      {% elsif form.type == 'submit' %}
+        {% include form/button.html form=form %}
+      {% elsif form.type == 'text' %}
+        {% include form/input.html form=form %}
+      {% elsif form.type == 'tel' %}
+        {% include form/input.html form=form %}
+      {% elsif form.type == 'number' %}
+        {% include form/input.html form=form %}
+      {% elsif form.type == 'password' %}
+        {% include form/password.html form=form %}
+      {% elsif form.type == 'email' %}
+        {% include form/input.html form=form %}
+      {% elsif form.type == 'cols' %}
+        {%if form.title %}<h3>{{form.title}}</h3>{% endif %}
+        {%if form.intro %}<p>{{form.intro}}</p>{% endif %}
+        {% for input in form.inputs %}
+          {% if forloop.first %}<div class="row">{% endif %}
+            <div class="{{form.cols}}">
+              {% if input.type == 'select' %}
+              {% include form/select.html form=input %}
+              {% elsif input.type == 'password' %}
+                {% include form/password.html form=form %}
+              {% elsif input.type == 'checkbox'%}
+              {% include form/checkbox.html form=input %}
+              {% elsif input.type == 'radio' %}
+                {% include form/radio.html form=input %}
+              {% else %}
+              {% include form/input.html form=input %}
+              {% endif %}
+            </div>
+          {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
+      {% elsif form.type == 'row' %}
+        {% for input in form.inputs %}
+        {% if forloop.first == true %}<div class="{{form.class}}"><div class="col-sm-12">
+        {% if form.title %}<h3>{{form.title}}</h3>{% endif %}{% endif %}
+        {%if form.intro %}<p>{{form.intro}}</p>{% endif %}
+        {% if input.type == 'row' %}
+          {% for inputRow in input.inputs %}
+            {% if forloop.first %}<div class="row">{% endif %}
+              <div class="{{input.cols}}">
+                {% if inputRow.type == 'select' %}
+                {% include form/select.html form=inputRow %}
+                {% elsif inputRow.type == 'checkbox'%}
+                {% include form/checkbox.html form=inputRow %}
+                {% elsif inputRow.type == 'radio'%}
+                {% include form/radio.html form=inputRow %}
+                {% else %}
+                {% include form/input.html form=inputRow %}
+                {% endif %}
+              </div>
+            {% if forloop.last %}</div>{% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if forloop.last == true %}</div></div>{% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</form>

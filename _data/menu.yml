@@ -1,0 +1,235 @@
+home:
+   level1:
+    - title: Home
+      url: '/'
+      publish: true
+    - title: Stichting Fly Aware
+      url: '/stichting/'
+      publish: true
+      showlevel2: true
+      level2:
+        - title: Stichting Fly Aware
+          publish: false
+        - title: Over ons
+          url: over-ons/
+          publish: true
+        - title: Beleidsplan
+          url: beleidsplan/
+          publish: true
+        - title: Steun de Stichting Fly Aware
+          url: steun-de-stichting/
+          publish: true
+        - title: Sponsorkliks en Fly Aware
+          url: sponsorkliks/
+          publish: true
+    - title: Informatie
+      url: '/informatie/'
+      showlevel2: true
+      level2:
+        - title: Informatie
+          publish: false
+        - title: Vervuilde Lucht in Vliegtuigen
+          url: vervuilde-lucht-in-vliegtuigen/
+          publish: true
+        - title: Neurologische Klachten
+          url: neurologische-klachten/
+          publish: true
+        - title: Contaminated Cabin Air
+          url: contaminated-air/
+          publish: true
+    - title: Behandeling
+      url: '/behandeling/'
+      showlevel2: true
+      level2:
+        - title: Behandeling
+          publish: false
+        - title: Orthomoleculaire behandeling
+          url: orthomoleculair/
+          publish: true
+        - title: Raymedy
+          url: raymedy/
+          publish: true
+        - title: Neuro Feedback
+          url: neurofeedback/
+          publish: true
+    - title: Onderzoek
+      url: '/onderzoek/'
+      showlevel2: true
+      level2:
+        - title: Onderzoek
+          publish: false
+        - title: Publicaties
+          url: publicaties/
+          publish: true
+        - title: In de Media
+          url: in-de-media/
+          publish: true
+        - title: Wetenschap
+          url: de-wetenschap/
+          publish: true
+    - title: Nieuws
+      url: '/nieuws/'
+      publish: true
+    - title: Blog
+      url: '/blog/'
+      showlevel2: true
+      level2:
+        - title: My mom had a dream...😜
+          url: B787-sketch/
+          publish: true
+        - title: Gehoorproblemen en Aerotoxic Syndrome
+          url: gehoorproblemen/
+          publish: true
+        - title: Dick Swaab en "Ons creatieve brein"
+          url: Dick-swaab-ons-creatieve-brein/
+          publish: true
+        - title: Demonstratie Frankfurt
+          url: demo_frankfurt/
+          publish: true
+        - title: Drinkwater aan boord
+          url: drinkwater_aan_boord/
+          publish: true
+        - title: Test Gelaatsmaskers
+          url: filters/
+          publish: true
+    - title: Contact
+      url: '/contact/'
+      showlevel2: true
+      level2:
+        - title: Contact Stichting Fly Aware
+          publish: true
+        - title: Bezoek onze Partners
+          url: partners/
+          publish: true
+    - title: EN/nl
+      url: '/eng/'
+
+
+submenu:
+  level1:
+    - title: sitemap
+      url: '/sitemap/'
+      publish: true
+    - title: disclaimer
+      url: '/disclaimer/'
+      publish: true
+    - title: privacyverklaring
+      url: '/privacyverklaring/'
+      publish: true
+
+home2:
+   level1:
+    - title: Home
+      url: '/eng/'
+      publish: true
+    - title: Stichting Fly Aware
+      url: '/stichting2/'
+      publish: true
+      showlevel2: true
+      level2:
+        - title: Stichting Fly Aware
+          publish: false
+        - title: About Us
+          url: about-us/
+          publish: true
+        - title: Policy
+          url: policy/
+          publish: true
+        - title: Support Stichting Fly Aware
+          url: support-the-foundation/
+          publish: true
+        - title: Sponsorkliks and Fly Aware
+          url: sponsorkliks-eng/
+          publish: true
+    - title: Information
+      url: '/informatie2/'
+      showlevel2: true
+      level2:
+        - title: Information
+          publish: false
+        - title: Contaminated Air in Aircraft
+          url: contaminated-air/
+          pubish: true
+        - title: Neurological Disorders
+          url: neurological-disorders/
+          pubish: true
+        - title: Contaminated Cabin Air
+          url: contaminated-air2/
+          pubish: true
+    - title: Treatment
+      url: '/behandeling2/'
+      showlevel2: true
+      level2:
+        - title: Treatment
+          publish: false
+        - title: Orthomolecular Treatment
+          url: orthomolecular/
+          pubish: true
+        - title: Raymedy
+          url: raymedy/
+          pubish: true
+        - title: Neuro Feedback
+          url: neurofeedback/
+          pubish: true
+    - title: Research
+      url: '/onderzoek2/'
+      showlevel2: true
+      level2:
+        - title: Research
+          publish: false
+        - title: Publications
+          url: publications/
+          pubish: true
+        - title: In the Media
+          url: in-the-media/
+          pubish: true
+        - title: Science
+          url: science/
+          pubish: true
+    - title: News
+      url: '/news/'
+      publish: true
+    - title: Blog
+      url: '/blog2/'
+      showlevel2: true
+      level2:
+        - title: My mom had a dream...😜
+          url: B787-sketch/
+          publish: true
+        - title: Hearing Problems and Aerotoxic Syndrome
+          url: hearing_problems/
+          publish: true
+        - title: Demonstration Frankfurt
+          url: demo_frankfurt_eng/
+          publish: true
+        - title: Drinking water on board
+          url: drinking_water/
+          publish: true
+        - title: Test Face masks
+          url: filters-eng/
+          publish: true
+    - title: Contact
+      url: '/contact/'
+      publish: true
+      showlevel2: true
+      level2:
+        - title: Contact Stichting Fly Aware
+          url: contact2/
+          publish: true
+        - title: Visit our Partners
+          url: partners2/
+          publish: true
+    - title: NL/en
+      url: '/'
+
+submenu2:
+  level1:
+    - title: sitemap
+      url: '/sitemap2/'
+      publish: true
+    - title: disclaimer
+      url: '/disclaimer2/'
+      publish: true
+    - title: privacy statement
+      url: '/privacyverklaring2/'
+      publish: true

@@ -1,0 +1,14 @@
+<div class="form-group has-feedback">
+  <label for="{{include.form.name}}">{{include.form.title}}</label>
+  <input
+    type="{{include.form.type}}"
+    name="{{include.form.name}}"
+    placeholder="{{include.form.placeholder}}"
+    class="form-control{% if include.form.required %} required{%endif%}{% if include.form.class %} {{include.form.class}}{%endif%}"
+    id="{{include.form.name}}"
+    {% if include.form.required%} required{%endif%}
+    {% if include.form.disabled %} disabled{%endif%}
+    value="{{include.form.value}}"
+    {% if include.form.data-ciee %}data-ciee="true"{% endif %}
+  >
+</div>

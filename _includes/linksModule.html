@@ -1,0 +1,13 @@
+<div class="element {{include.tag}}">
+  <div class="linksModule">
+    <ul class="file-link-ul">
+      {% for post in site.tags[include.tag] %}
+      <li class="filelink-ext-pdf">
+        <a href="/assets/files/{{post.filelink}}" target="_blank">{{post.title}}</a>
+        {% if include.description==true %}<span class="description">
+          <img src="/assets/img/prikbord/{{post.title}}.jpg" alt="foto van prikbord {{post.title}}">
+        </span>{% endif %}
+      </li>{% endfor %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+{% if page.taal == "eng" %}
+	{% assign menustart="home2" %}
+	{% assign pointer="go to" %}
+	{% assign sub="submenu2" %}
+{% else %}
+	{% assign menustart="home" %}
+	{% assign pointer="ga naar" %}
+	{% assign sub="submenu" %}
+{% endif %}
+<footer class="countainer-fluid">
+  <div class="container">
+		<div class="row">
+			<div class="col-sm-2 col-md-3">
+				{% for item in site.data.menu.[menustart].level1 %}
+				{% if forloop.first == true %}<ul class="list-unstyled">{% endif %}
+					{% if item.publish %}<li><a href="{{site.baseurl}}{{item.url}}" title="{{pointer}} {{item.title}}">{{item.title}}</a></li>{% endif %}
+				{% if forloop.last == true %}</ul>{% endif %}
+				{% endfor %}
+			</div>
+			<div class="col-sm-4 col-md-4">
+				<a name="contact" id="contact" class="target"></a>
+				<h2>{{site.data.settings.company}}</h2>
+				{% for item in site.data.settings.postadres %}
+				{% if forloop.first == true %}<ul class="list-unstyled">{% endif %}
+					<li>{{item}}</li>
+				{% if forloop.last == true %}</ul>{% endif %}
+				{% endfor %}
+			</div>
+			<div class="col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-2">
+				{% for item in site.data.menu.[sub].level1 %}
+				{% if forloop.first == true %}<ul class="list-unstyled">{% endif %}
+					{% if item.publish %}<li><a href="{{site.baseurl}}{{item.url}}" title="{{pointer}} {{item.title}}">{{item.title}}</a></li>{% endif %}
+				{% if forloop.last == true %}</ul>{% endif %}
+				{% endfor %}
+			   	<h3>{% if page.taal == "eng" %}Follow us on social media{% else %}Volg ons ook op social media{% endif %}</h3>
+				{% for item in site.data.socialmedia %}
+				{% if forloop.first == true %}<ul class="list-inline">{% endif %}
+				{% if item.publish %}<li><a href="{{item.url}}" title="{{item.icon}}">{{item.icon}}</a></li>{% endif %}
+				{% if forloop.last == true %}</ul>{% endif %}
+				{% endfor %}
+				<ul class="list-inline">
+          {% for contact in site.data.settings.colofon %}
+          {% if contact.publish %}<li><small>{{contact.title}} <a href="{{contact.url}}" target="external_link">{{contact.name}}</a></small></li>{% endif %}
+          {% endfor %}
+        </ul>
+			</div>
+		</div>
+    <div class="row colofon">
+      <div class="col-sm-12">
+        <ul class="list-inline">
+          <li>© {{ 'now' | date: "%Y"}} {{site.data.settings.company}} V2.0</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

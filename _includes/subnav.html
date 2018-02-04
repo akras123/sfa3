@@ -1,0 +1,33 @@
+{% assign page_active = page.url | downcase | replace: ' ', '-' %}
+{% assign page_parent = page.parent | downcase | replace: ' ', '-' %}
+{% assign hash = '#' %}
+{% if page.taal == "eng" %}
+    {% assign menustart = "home2" %}
+    {% assign pointer = "go to" %}
+{% else %}
+    {% assign menustart = "home" %}
+    {% assign pointer = "ga naar" %}
+{% endif %}
+{% for menu in site.data.menu.[menustart].level1 %}
+    {% if forloop.first == true %}<ul class="subnav" {% if include.affix %}data-spy="affix" data-offset-top="0" data-offset-bottom="400"{% endif %}>{% endif %}
+    {% if menu.url == page_active or menu.url == page_parent %}
+      <li {% if menu.url == page_active%}class="active"{% endif %}><a href="{{menu.url}}">{{menu.title}}</a></li>
+      {% for submenu in menu.level2 %}
+        {% if forloop.first == true %}<ul class="level2">{% endif %}
+        {% if submenu.publish != false %}
+        {% capture menu_active %}{{menu.url}}{{submenu.url}}{% endcapture %}
+        <li class="{% if page_active == menu_active %} active{% endif %}">
+          <a href="{% if submenu.url contains hash %}{{submenu.url}}{% else %}{{menu.url}}{{submenu.url}}{% endif %}">{% if submenu.icon%}<i class="{{submenu.icon}}"></i>{% endif %}<span>{{submenu.title}}</span></a>
+        </li>{% endif %}
+        {% if forloop.last == true %}</ul>{% endif %}
+      {% endfor %}
+      {% for submenu in site.tags[menu.tag] %}
+      {% if forloop.first == true %}<ul class="level2">{% endif %}
+        <li {% if page_active == submenu.url %}class="active"{% endif %}>
+            <a href="{{submenu.url}}" title="pointer2 {{submenu.title}}">{{submenu.title}}</a>
+        </li>
+      {% if forloop.last == true %}</ul>{% endif %}
+      {% endfor %}
+      {% if forloop.last == true %}</ul>{% endif %}
+    {% endif %}
+  {% endfor %}
