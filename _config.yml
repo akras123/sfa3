@@ -38,8 +38,8 @@ prose:
     'typings',
     '.vscode'
   ]
-  siteurl: "http://sfa.publiceervoormij.nl"
-  relativeLinks: "http://sfa.publiceervoormij.nl/links.jsonp"
+  #siteurl: "http://sfa.publiceervoormij.nl"
+  #relativeLinks: "http://sfa.publiceervoormij.nl/links.jsonp"
   media: "assets/img"
   metadata:
     _posts:
