@@ -1,5 +1,5 @@
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://www.flyaware.info" # the base hostname & protocol for your site
+#url: "https://www.flyaware.info" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
